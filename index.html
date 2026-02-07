@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumus Player - Legal Documents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo h1 {
+            font-size: 3em;
+            background: linear-gradient(135deg, #c41e3a 0%, #e74c3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+        
+        .logo p {
+            color: #888;
+            font-size: 1.1em;
+        }
+        
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .link-card {
+            background: rgba(196, 30, 58, 0.1);
+            border: 2px solid rgba(196, 30, 58, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .link-card:hover {
+            background: rgba(196, 30, 58, 0.2);
+            border-color: #c41e3a;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.3);
+        }
+        
+        .link-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #c41e3a;
+        }
+        
+        .link-card p {
+            color: #aaa;
+            font-size: 0.95em;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: #c41e3a;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Lumus Player</h1>
+            <p>Legal Documents</p>
+        </div>
+        
+        <div class="links">
+            <a href="privacy.html" class="link-card">
+                <h2>📋 Privacy Policy</h2>
+                <p>Política de Privacidade</p>
+            </a>
+            
+            <a href="terms.html" class="link-card">
+                <h2>📜 Terms of Use</h2>
+                <p>Termos de Uso</p>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>Last updated: February 7, 2026</p>
+            <p><a href="https://github.com/Lumus-Player/lumus-player-legal">View on GitHub</a></p>
+        </div>
+    </div>
+</body>
+</html>
