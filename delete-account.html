@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumus Player - Excluir Conta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(229, 9, 20, 0.2);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e50914, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo p {
+            color: #888;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+
+        h2 {
+            color: #e50914;
+            font-size: 1.4em;
+            margin: 36px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(229, 9, 20, 0.25);
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: #ccc;
+        }
+
+        .warning-box {
+            background: rgba(229, 9, 20, 0.1);
+            border: 1px solid rgba(229, 9, 20, 0.4);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #ffaaaa;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .steps li {
+            counter-increment: step;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+            color: #ccc;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            background: #e50914;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85em;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: rgba(229, 9, 20, 0.15);
+            color: #ff6b6b;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(229, 9, 20, 0.4);
+            margin: 8px 0 20px;
+            transition: background 0.2s;
+        }
+
+        .email-link:hover {
+            background: rgba(229, 9, 20, 0.25);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 14px;
+            background: rgba(229, 9, 20, 0.15);
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #ccc;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-deleted {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 6px;
+            padding: 2px 10px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .badge-kept {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.12);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 6px;
+            padding: 2px 10px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            color: #555;
+            font-size: 0.85em;
+        }
+
+        .footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #e50914;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 36px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Lumus Player</h1>
+            <p>Exclusão de Conta e Dados</p>
+        </div>
+
+        <h2>Como excluir sua conta</h2>
+        <p>
+            Para solicitar a exclusão da sua conta Lumus Player e de todos os dados associados,
+            siga os passos abaixo. Todas as solicitações são processadas em até <strong>30 dias</strong>.
+        </p>
+
+        <ol class="steps">
+            <li>Envie um email para o endereço abaixo com o assunto <strong>"Excluir minha conta"</strong>.</li>
+            <li>Informe no corpo do email o endereço de email cadastrado na sua conta Lumus Player.</li>
+            <li>Você receberá uma confirmação em até 5 dias úteis. Caso não receba, verifique sua pasta de spam.</li>
+            <li>Após a confirmação, seus dados serão permanentemente removidos em até <strong>30 dias</strong>.</li>
+        </ol>
+
+        <a class="email-link" href="mailto:playerlumus@gmail.com?subject=Excluir%20minha%20conta">
+            playerlumus@gmail.com
+        </a>
+
+        <div class="warning-box">
+            <p>
+                ⚠️ <strong>Atenção:</strong> a exclusão da conta é permanente e não pode ser desfeita.
+                Seu histórico de reprodução, favoritos, configurações e assinaturas ativas serão cancelados e removidos.
+            </p>
+        </div>
+
+        <h2>O que é excluído</h2>
+        <p>Ao confirmar a exclusão da conta, os seguintes dados são permanentemente removidos dos nossos servidores:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Dado</th>
+                    <th>Ação</th>
+                    <th>Prazo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Email e perfil (nome, foto)</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Histórico de reprodução</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Favoritos e listas</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Credenciais IPTV sincronizadas</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Configurações da conta</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Device ID (fingerprint)</td>
+                    <td><span class="badge-deleted">Excluído</span></td>
+                    <td>Em até 30 dias</td>
+                </tr>
+                <tr>
+                    <td>Registros de transações (compras)</td>
+                    <td><span class="badge-kept">Mantido por 90 dias</span></td>
+                    <td>Exigência legal/fiscal</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Assinaturas ativas</h2>
+        <p>
+            Se você possui uma assinatura ativa no Google Play, a exclusão da conta no Lumus Player
+            <strong>não cancela automaticamente</strong> a assinatura na Google Play Store.
+            Para cancelar a cobrança, acesse:
+            <strong>Google Play → Assinaturas → Lumus Player → Cancelar assinatura</strong>.
+        </p>
+
+        <div class="footer">
+            <p>
+                <a href="index.html">Página inicial</a> ·
+                <a href="privacy.html">Política de Privacidade</a> ·
+                <a href="terms.html">Termos de Uso</a>
+            </p>
+            <p style="margin-top: 10px;">© 2025 Lumus Player. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
